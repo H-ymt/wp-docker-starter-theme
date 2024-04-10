@@ -1,0 +1,11 @@
+// ベーススタイルを読み込む
+@import "./base/mixins";
+@import "./base/destyle";
+@import "./base/global";
+@import "./base/editor";
+
+// パーツを読み込む
+@import "./parts/**/*";
+
+// // ページスタイルを読み込む
+@import "./pages/**/*";

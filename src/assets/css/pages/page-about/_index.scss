@@ -1,0 +1,19 @@
+.about {
+  position: relative;
+}
+
+.about__bg {
+  padding: 70px 0 0;
+}
+
+.about__inner {
+  margin: 60px 0 0;
+}
+
+.about__text {
+  letter-spacing: 0.02em;
+}
+
+.about__text + .about__text {
+  margin: 32px 0 0;
+}

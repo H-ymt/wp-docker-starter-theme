@@ -1,0 +1,34 @@
+{
+  "core": "https://ja.wordpress.org/latest-ja.zip",
+  "phpVersion": "8.2",
+  "plugins": [
+    "https://downloads.wordpress.org/plugin/all-in-one-wp-migration.zip",
+    "https://downloads.wordpress.org/plugin/wordpress-seo.zip",
+    "https://downloads.wordpress.org/plugin/query-monitor.zip",
+    "https://downloads.wordpress.org/plugin/wp-multibyte-patch.zip",
+    "https://downloads.wordpress.org/plugin/webp-converter-for-media.zip",
+    "https://downloads.wordpress.org/plugin/duplicate-post.zip",
+    "https://downloads.wordpress.org/plugin/all-in-one-wp-security-and-firewall.zip",
+    "https://downloads.wordpress.org/plugin/autoptimize.zip",
+    "https://downloads.wordpress.org/plugin/custom-post-type-ui.zip"
+  ],
+  "themes": ["./src/"],
+  "port": 8000,
+  "env": {
+    "tests": {
+      "port": 8001
+    }
+  },
+  "mappings": {
+    "wp-content/plugins": "./plugins",
+    "sql": "./sql",
+    "wp-content/uploads": "./uploads",
+    "wp-cli.local.yml": "./wp-cli.local.yml",
+    "php.ini": "./php.ini"
+  },
+  "config": {
+    "VITE_SERVER": "http://localhost:3000",
+    "WP_DEBUG": true,
+    "AUTOMATIC_UPDATER_DISABLED": true
+  }
+}

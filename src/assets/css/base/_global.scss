@@ -1,0 +1,52 @@
+:root {
+  scroll-padding-top: var(--header-height);
+
+  --header-height: 64px;
+  --c-muted: #595959;
+  --c-text-body: #242424;
+  --c-border: #767676;
+  --c-primary: #f9a742fc;
+  --c-secondary: #22a699;
+  --c-tertialy: #f2be22;
+  --c-white: #ffffff;
+  --c-accent: #f24c3d;
+  --rounded-sm: 4px;
+  --rounded: 6px;
+  --rounded-lg: 8px;
+  --rounded-full: 999rem;
+  --font-noto: "Noto Sans JP", sans-serif;
+  --font-yugo: "游ゴシック体", "YuGothic", "游ゴシック Medium", "Yu Gothic Medium",
+    "游ゴシック", "Yu Gothic", "sans-serif";
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  background: #fbfbfb;
+}
+
+body {
+  font-family: var(--font-noto);
+  color: var(--c-text-body);
+}
+
+.container {
+  width: min(100%, 1200px);
+  padding-inline: 24px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+svg {
+  width: 100%;
+  height: auto;
+}

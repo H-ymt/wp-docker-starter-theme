@@ -1,0 +1,126 @@
+.editor {
+  & h1 {
+    padding-bottom: 18px;
+    margin: 40px 0;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    border-bottom: solid 2px var(--c-white);
+  }
+
+  & h2 {
+    padding-bottom: 18px;
+    margin: 40px 0;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    border-bottom: solid 2px var(--c-white);
+  }
+
+  & h3 {
+    padding: 8px 34px;
+    margin: 40px 0;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    background-color: var(--c-white);
+  }
+
+  & h4 {
+    padding: 0 18px;
+    margin: 40px 0;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    border-left: solid 4px var(--c-white);
+  }
+
+  & h5 {
+    margin: 40px 0;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+  }
+
+  & .wp-block-image {
+    margin: 60px 0;
+
+    & img {
+      width: 100%;
+    }
+
+    & figcaption {
+      margin: 18px 0 0;
+      font-weight: 500;
+      text-align: center;
+      letter-spacing: 0.02em;
+    }
+  }
+
+  & img {
+    width: 100%;
+  }
+
+  & ul {
+    margin: 32px 0;
+
+    & li {
+      letter-spacing: 0.02em;
+
+      &:not(:last-of-type) {
+        margin-bottom: 6px;
+      }
+
+      &::before {
+        margin-right: 2px;
+        content: "・";
+      }
+    }
+  }
+
+  & ol {
+    margin: 32px 0;
+    counter-reset: num;
+
+    & li {
+      letter-spacing: 0.02em;
+
+      &:not(:last-of-type) {
+        margin-bottom: 6px;
+      }
+
+      &::before {
+        margin-right: 6px;
+        content: counter(num);
+        counter-increment: num;
+      }
+    }
+  }
+
+  & .wp-block-quote {
+    margin: 32px 0;
+
+    & p {
+      padding: 38px;
+      margin: 0;
+      line-height: 2;
+      letter-spacing: 0.05em;
+      background-color: #e9e2da;
+    }
+  }
+
+  & p {
+    margin: 32px 0;
+    letter-spacing: 0.025em;
+  }
+
+  & a {
+    border-bottom: solid 1px var(--c-white);
+  }
+
+  & a[target="_blank"] {
+    border-bottom: solid 1px var(--c-white);
+
+    &::after {
+      display: inline-block;
+      margin: 0 0 0 6px;
+      content: "";
+      background: url($base-dir + "assets/images/icon-blank.svg") no-repeat center / cover;
+    }
+  }
+}
