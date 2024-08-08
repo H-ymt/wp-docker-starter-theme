@@ -1,19 +1,22 @@
 :root {
-  scroll-padding-top: var(--header-height);
+  // Color
+  --c-primary: #0017c1;
+  --c-primary-hover: #000082;
+  --c-secondary: #264af4;
+  --c-secondary-hover: #c5d9f9;
+  --c-tertiary: #00118f;
+  --c-text: #1a1a1c;
+  --c-link: #0017c1;
+  --c-link-hover: #000082;
+  --bgc-white: #ffffff;
 
-  --header-height: 64px;
-  --c-muted: #595959;
-  --c-text-body: #242424;
-  --c-border: #767676;
-  --c-primary: #f9a742fc;
-  --c-secondary: #22a699;
-  --c-tertialy: #f2be22;
-  --c-white: #ffffff;
-  --c-accent: #f24c3d;
+  // Border radius
   --rounded-sm: 4px;
   --rounded: 6px;
   --rounded-lg: 8px;
   --rounded-full: 999rem;
+
+  // Font family
   --font-noto: "Noto Sans JP", sans-serif;
   --font-yugo: "游ゴシック体", "YuGothic", "游ゴシック Medium", "Yu Gothic Medium",
     "游ゴシック", "Yu Gothic", "sans-serif";
@@ -23,62 +26,44 @@
 *,
 ::before,
 ::after {
-  --clamp-root-font-size: 16;
-  --clamp-slope: calc(
-    (var(--clamp-max) - var(--clamp-min)) /
-      (var(--clamp-viewport-max) - var(--clamp-viewport-min))
-  );
-  --clamp-y-axis-intersection: calc(
-    var(--clamp-min) - (var(--clamp-slope) * var(--clamp-viewport-min))
-  );
-  --clamp-preffered-value: calc(
-    var(--clamp-y-axis-intersection) * (1rem / var(--clamp-root-font-size)) +
-      (var(--clamp-slope) * 100vi)
-  );
-  --clamp: clamp(
-    calc(var(--clamp-min) * (1rem / var(--clamp-root-font-size))),
-    var(--clamp-preffered-value),
-    calc(var(--clamp-max) * (1rem / var(--clamp-root-font-size)))
-  );
-
-  font-size: var(--clamp);
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 html {
+  font-size: medium;
+  background: var(--bgc-white);
   scroll-behavior: smooth;
-  background: #fbfbfb;
 }
 
 body {
-  --clamp-viewport-min: 375;
-  --clamp-viewport-max: 992;
-  --clamp-min: 14;
-  --clamp-max: 16;
-
-  font-family: var(--font-noto);
-  color: var(--c-text-body);
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
 }
 
-.container {
-  width: min(100%, 1200px);
-  padding-inline: 24px;
-  margin: 0 auto;
+a {
+  color: var(--c-link);
 }
 
-h1 {
-  font-size: var(--clamp);
-
-  --clamp-min: 32;
-  --clamp-max: 40;
+a:hover,
+a:visited {
+  color: var(--c-link-hoer);
 }
 
 img {
   max-width: 100%;
   height: auto;
-  vertical-align: bottom;
+  vertical-align: middle;
+  object-fit: cover;
 }
 
 svg {
   width: 100%;
   height: auto;
+}
+
+html:has(dialog[open]) {
+  overflow: hidden;
 }

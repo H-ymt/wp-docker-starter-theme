@@ -31,13 +31,13 @@ pnpm ci or pnpm install
 2. wp start up & db import
 
 ```bash
-pnpm run wp:setup
+pnpm wp:setup
 ```
 
 3. frontend build start
 
 ```bash
-pnpm run dev
+pnpm dev
 ```
 
 open <http://localhost:3030/>
@@ -53,8 +53,8 @@ password : password
 
 ## 🏠 Browser Sync
 
-ネットワーク経由でのアクセスをする場合は`.wp-env.json`の`VITE_SERVER`の値を自身のローカルIPに変更してください。<br>
-こちらは暫定対応です。`.wp-env.json`はGit管理されているので、こちらの値を上書きしてコミットしないように注意してください。
+ネットワーク経由でのアクセスをする場合は[`.wp-env.json`](.wp-env.json)の`VITE_SERVER`の値を自身のローカルIPに変更してください。<br>
+こちらは暫定対応です。[`.wp-env.json`](.wp-env.json)はGit管理されているので、こちらの値を上書きしてコミットしないように注意してください。
 
 ```bash
 "VITE_SERVER": "http://0.0.0.0:3000"
@@ -63,14 +63,16 @@ password : password
 ## 💻 Production Upload
 
 ```bash
-pnpm run build
+pnpm build
 ```
 
-アップロードの際は`/dist`以下をアップロードしてください。
+アップロードの際は`/dist`以下のファイルをアップロードしてください。
 
 ## 💅 Styling
 
 クラスの命名については BEM を採用しています。
+
+<!-- SCSSを使用する場合は`assets/css`以下に`.scss`ファイルを作成し[`assets/app.js`](src/assets/app.js)でSCSSファイルをインポートしてください。 -->
 
 ## 🌙 How to reference images from css
 
@@ -95,21 +97,6 @@ background-image: url($base-dir + "assets/images/icon-blank.svg");
 
 ```bash
 <img src="<?= vite_src_static('icon-blank.svg') ?>" decoding="async" width="30" height="30" alt="">
-```
-
-## ✨ Image
-
-ローカルの画像は最適化処理のための簡易的なパーツを用意しています。`src/parts/picture-local.php`を使用するようにしてください。
-
-```bash
-<?php get_template_part("./parts/picture-local", null, [
-  "images" => [
-      "src" => "sample-01.jpg",
-      "width" => "1280",
-      "height" => "600",
-      "alt" => "",
-  ],
-]); ?>
 ```
 
 ## 😎 Svg Sprite

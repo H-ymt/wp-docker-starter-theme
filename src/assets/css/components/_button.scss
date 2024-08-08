@@ -1,0 +1,12 @@
+.button {
+  cursor: pointer;
+}
+
+.buttonPrimary--medium {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background: var(--c-primary);
+  border-radius: var(--rounded);
+}

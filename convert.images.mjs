@@ -5,7 +5,7 @@ import fse from "fs-extra";
 
 const sharpOption = {
   effort: 0,
-  quality: 60,
+  quality: 75,
 };
 
 const srcDir = "src/assets/images";
