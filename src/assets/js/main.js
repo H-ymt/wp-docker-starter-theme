@@ -1,7 +1,11 @@
 // Module
-import "./module/accordion";
 
 // Utility
-import "./utility/internalScroll";
+import { internalScroll } from "./utility/internalScroll";
 
-import "./frontPage.js";
+// Page
+import { hello, world } from "./frontPage";
+
+internalScroll();
+hello();
+world();
