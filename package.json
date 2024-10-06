@@ -28,8 +28,6 @@
     "*.{css,scss}": "stylelint --fix",
     "*.{html,css,scss,js,json,php}": "prettier --write"
   },
-  "author": "HISAMI KURITA",
-  "license": "ISC",
   "devDependencies": {
     "@markuplint/php-parser": "^3.10.0",
     "@prettier/plugin-php": "^0.20.1",
