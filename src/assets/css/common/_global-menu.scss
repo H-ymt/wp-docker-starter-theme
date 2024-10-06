@@ -1,0 +1,9 @@
+.gnav__link {
+  display: inline-flex;
+  padding-inline: 1rem;
+}
+
+.gnav__link:hover,
+.gnav__link:focus {
+  color: var(--c-link);
+}

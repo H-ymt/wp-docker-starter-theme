@@ -15,10 +15,8 @@
   <?php wp_head(); ?>
 </head>
 
-<body id="top" data-type="<?= IS_TYPE ?>" <?php body_class(); ?>>
-  <header class="global-header">
-    <nav aria-label="Global navigation">
-
-    </nav>
-
+<body data-type="<?= IS_TYPE ?>" <?php body_class(); ?>>
+  <header class="header">
+    <a href="<?= home_url() ?>" class="header__logo">Logo</a>
+    <?php get_template_part("/include/global-menu"); ?>
   </header>

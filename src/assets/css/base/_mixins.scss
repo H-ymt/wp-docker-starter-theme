@@ -1,3 +1,17 @@
+// メディアクエリ
+$breakpoints: (
+  "sm": 576px,
+  "md": 768px,
+  "lg": 992px,
+  "xl": 1200px,
+);
+
+@mixin mq($size) {
+  @media screen and (max-width: #{map-get($breakpoints, $size)}) {
+    @content;
+  }
+}
+
 // 三点リーダー
 @mixin line-clamp($num, $num-sp: null) {
   display: -webkit-box;
@@ -18,19 +32,5 @@
     &:where(:any-link, :enabled, summary):hover {
       @content;
     }
-  }
-}
-
-// メディアクエリ
-$breakpoints: (
-  "sm": 576px,
-  "md": 768px,
-  "lg": 992px,
-  "xl": 1200px,
-);
-
-@mixin mq($size) {
-  @media screen and (min-width: #{map-get($breakpoints, $size)}) {
-    @content;
   }
 }
