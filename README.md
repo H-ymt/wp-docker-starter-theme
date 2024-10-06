@@ -88,7 +88,7 @@ background-image: url($base-dir + "assets/images/icon-blank.svg");
 `vite-config.php`の関数を使用してAssetsにアクセスしてください。
 
 ```bash
-<link rel="stylesheet" href="<?= vite_src_css("app.scss") ?>">
+<link rel="stylesheet" href="<?= vite_src_css("main.scss") ?>">
 ```
 
 ```bash

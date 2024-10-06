@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" href="<?= vite_src_static("favicon.ico") ?>">
   <link rel="apple-touch-icon" href="<?= vite_src_static("apple-touch-icon.png") ?>">
-  <link rel="stylesheet" href="<?= vite_src_css("app.scss") ?>">
+  <link rel="stylesheet" href="<?= vite_src_css("main.scss") ?>">
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

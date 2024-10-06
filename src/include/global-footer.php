@@ -4,9 +4,10 @@
   </div>
 </footer>
 <?php wp_footer(); ?>
-<?php if (is_front_page()): ?>
-  <script type="module" crossorigin src="<?= vite_src_js("front-page.js") ?>"></script>
-<?php endif; ?>
+<!-- <?php if (is_front_page()): ?>
+  <script type="module" crossorigin src="<?= vite_src_js("frontPage.js") ?>"></script>
+<?php endif; ?> -->
+
 <script type="module" crossorigin src="<?= vite_src_js("app.js") ?>"></script>
 </body>
 

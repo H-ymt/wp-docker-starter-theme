@@ -50,7 +50,7 @@ export default defineConfig({
     target: "es2018",
     rollupOptions: {
       input: {
-        app: path.resolve(__dirname + `/src/assets/app.js`),
+        app: path.resolve(__dirname + `/src/assets/main.js`),
       },
       output: {
         entryFileNames: `assets/js/[name].js`,

@@ -14,8 +14,9 @@ export function internalScroll() {
       }
     };
 
-    document
-      .querySelectorAll("a[href^='#']")
-      .forEach((link) => link.addEventListener("click", handleInternalLink));
+    const links = document.querySelectorAll("a[href^='#']");
+    for (const link of links) {
+      link.addEventListener("click", handleInternalLink);
+    }
   });
 }

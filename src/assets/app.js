@@ -1,10 +1,10 @@
 // entry point
 
 // If you want to use SCSS, import it here
-import "./css/app.scss";
+import "./css/main.scss";
 
 // get scripts
-import "./js/app.js";
+import "./js/main.js";
 
 // get images
 import.meta.glob(["./images/**"]);

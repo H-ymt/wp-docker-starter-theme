@@ -1,8 +1,8 @@
 <?php get_template_part("./include/global-header"); ?>
 
-<main id="page-about" class="about">
+<main id="page-feature" class="about">
   <div class="container subpageConatiner">
-    <h1 class="heroTitle">Feature</h1>
+    <h1 class="subpageTitle">Feature</h1>
     <div class="contents">
       <?php echo the_content(); ?>
     </div>

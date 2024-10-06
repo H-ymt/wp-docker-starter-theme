@@ -24,7 +24,6 @@
     </div>
   </div>
 
-
   <section class="sample">
     <div class="section__inner container">
       <div class="sample__image">
