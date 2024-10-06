@@ -1,50 +1,55 @@
 # wp-docker-starter-theme
 
-## WP Environment
+## 開発環境
 
-本テンプレートはWordPressのアップデートが常に行われていくことを前提にWordPressの最新バージョンを取得します。
+本テンプレートはWordPressのアップデートが常に行われていくことを前提に、常にWordPressの最新バージョンを取得します。<br />
 バージョンを固定する場合は、プロジェクト開始時に[Release Archive](https://ja.wordpress.org/download/releases/) よりリンク先をコピーして`.wp-env.json` にバージョンを指定してください。
 
-- WP ver latest
-- PHP ver 8.2
+```js
+// WordPressバージョンを固定する場合(/wp-env.json)
+{
+  "core": "ここにリンクを入れる",
+}
+```
 
-## Paid Plugins
+- WordPress: latest
+- PHP: 8.2
+- node: v20.11.0〜
+- [Docker Desktop](https://hub.docker.com/editions/community/docker-ce-desktop-mac/)
+
+## 有料プラグインについて
 
 有料プラグインについては下記のリンクからダウンロードをして `/plugins`配下に設置してください。Gitで管理されます。
 
-- [advanced-custom-fields-pro](https://bitbucket.org/lig-admin/lig-wordpress-plugins/src/master/admin-columns-pro/)
-- [all-in-one-wp-migration-unlimited-extension](https://bitbucket.org/lig-admin/lig-wordpress-plugins/src/master/all-in-one-wp-migration-unlimited-extension/)
-
-## Usage Environment
-
-- [Docker Desktop](https://hub.docker.com/editions/community/docker-ce-desktop-mac/)
-- Node.js >= 16
-
-## Local Environment Setup
+## ローカル開発環境のセットアップ
 
 1. package install
 
 ```bash
-pnpm ci or pnpm install
+npm install or npm ci
+or
+pnpm install or pnpm ci
 ```
 
 2. wp start up & db import
 
 ```bash
+npm wp:setup
+or
 pnpm wp:setup
 ```
 
 3. frontend build start
 
 ```bash
+npm run dev
+or
 pnpm dev
 ```
 
 open <http://localhost:3030/>
 
-- wp login
-
-open <http://localhost:3030/wp-admin>
+wp login <http://localhost:3030/wp-admin>
 
 ```bash
 user : admin
@@ -54,13 +59,13 @@ password : password
 ## Browser Sync
 
 ネットワーク経由でのアクセスをする場合は[`.wp-env.json`](.wp-env.json)の`VITE_SERVER`の値を自身のローカルIPに変更してください。<br>
-こちらは暫定対応です。[`.wp-env.json`](.wp-env.json)はGit管理されているので、こちらの値を上書きしてコミットしないように注意してください。
+[`.wp-env.json`](.wp-env.json)はGit管理されているので、下記の値を上書きしてコミットしないように注意してください。
 
 ```bash
 "VITE_SERVER": "http://0.0.0.0:3000"
 ```
 
-## Production Upload
+## 本番環境へのアップロード
 
 ```bash
 pnpm build
@@ -72,14 +77,13 @@ pnpm build
 
 クラスの命名については BEM を採用しています。
 
-<!-- SCSSを使用する場合は`assets/css`以下に`.scss`ファイルを作成し[`assets/app.js`](src/assets/app.js)でSCSSファイルをインポートしてください。 -->
-
 ## How to reference images from css
 
-$base-dir は設定をするとCSSでローカルと本番で異なる参照をすることができます。
+`$base-dir` は設定をするとCSSでローカルと本番で異なる参照をすることができます。<br />
+主にCSSファイルでurlを指定するときに使用します。
 
 ```bash
-background-image: url($base-dir + "assets/images/icon-blank.svg");
+background-image: url($base-dir + "assets/images/icon.svg");
 ```
 
 ## Assets
@@ -96,13 +100,13 @@ background-image: url($base-dir + "assets/images/icon-blank.svg");
 ```
 
 ```bash
-<img src="<?= vite_src_static('icon-blank.svg') ?>" decoding="async" width="30" height="30" alt="">
+<img src="<?= vite_src_static('icon.svg') ?>" width="30" height="30" alt="">
 ```
 
 ## Svg Sprite
 
 ```bash
-<?= get_svg_sprite('icon-blank') ?>
+<?= get_svg_sprite('icon') ?>
 ```
 
 ## Lint
@@ -115,14 +119,14 @@ pnpm run lint:check
 pnpm run lint:fix
 ```
 
-Lint はプリコミット時に必ず実行されます。以下の vscode プラグインをインストールすると vscode 保存時にも Lint が実行されます。
+Lint はプリコミット時に必ず実行されます。以下の VSCode プラグインをインストールすると VSCode 保存時にも Lint が実行されます。
 
 - [prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 - [markuplint](https://marketplace.visualstudio.com/items?itemName=yusukehirao.vscode-markuplint)
 - [stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint)
 - [eslint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 
-## Document
+## 公式ドキュメント
 
 - [wp-env](https://ja.wordpress.org/team/handbook/block-editor/reference-guides/packages/packages-env/)
 - [vite](https://ja.vitejs.dev/)
