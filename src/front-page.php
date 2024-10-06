@@ -8,10 +8,10 @@
     </p>
 
     <div class="hero__buttonArea">
-      <a class="hero__button button button--primary button--lg" href="<?php echo home_url(
-        "about",
-      ); ?>">
-        Document
+      <a
+        class="hero__button button button--primary button--lg"
+        href="<?php echo home_url("feature"); ?>">
+        Feature
       </a>
       <a class="hero__button button button--secondary button--lg" href="https://github.com/servmask">
         GitHub
