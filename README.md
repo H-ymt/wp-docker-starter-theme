@@ -1,6 +1,6 @@
 # wp-docker-starter-theme
 
-## 🛜 WP Environment
+## WP Environment
 
 本テンプレートはWordPressのアップデートが常に行われていくことを前提にWordPressの最新バージョンを取得します。
 バージョンを固定する場合は、プロジェクト開始時に[Release Archive](https://ja.wordpress.org/download/releases/) よりリンク先をコピーして`.wp-env.json` にバージョンを指定してください。
@@ -8,19 +8,19 @@
 - WP ver latest
 - PHP ver 8.2
 
-## 💰 Paid Plugins
+## Paid Plugins
 
 有料プラグインについては下記のリンクからダウンロードをして `/plugins`配下に設置してください。Gitで管理されます。
 
 - [advanced-custom-fields-pro](https://bitbucket.org/lig-admin/lig-wordpress-plugins/src/master/admin-columns-pro/)
 - [all-in-one-wp-migration-unlimited-extension](https://bitbucket.org/lig-admin/lig-wordpress-plugins/src/master/all-in-one-wp-migration-unlimited-extension/)
 
-## 🛠️ Usage Environment
+## Usage Environment
 
 - [Docker Desktop](https://hub.docker.com/editions/community/docker-ce-desktop-mac/)
 - Node.js >= 16
 
-## 🚀 Local Environment Setup
+## Local Environment Setup
 
 1. package install
 
@@ -51,7 +51,7 @@ user : admin
 password : password
 ```
 
-## 🏠 Browser Sync
+## Browser Sync
 
 ネットワーク経由でのアクセスをする場合は[`.wp-env.json`](.wp-env.json)の`VITE_SERVER`の値を自身のローカルIPに変更してください。<br>
 こちらは暫定対応です。[`.wp-env.json`](.wp-env.json)はGit管理されているので、こちらの値を上書きしてコミットしないように注意してください。
@@ -60,7 +60,7 @@ password : password
 "VITE_SERVER": "http://0.0.0.0:3000"
 ```
 
-## 💻 Production Upload
+## Production Upload
 
 ```bash
 pnpm build
@@ -68,13 +68,13 @@ pnpm build
 
 アップロードの際は`/dist`以下のファイルをアップロードしてください。
 
-## 💅 Styling
+## Styling
 
 クラスの命名については BEM を採用しています。
 
 <!-- SCSSを使用する場合は`assets/css`以下に`.scss`ファイルを作成し[`assets/app.js`](src/assets/app.js)でSCSSファイルをインポートしてください。 -->
 
-## 🌙 How to reference images from css
+## How to reference images from css
 
 $base-dir は設定をするとCSSでローカルと本番で異なる参照をすることができます。
 
@@ -82,7 +82,7 @@ $base-dir は設定をするとCSSでローカルと本番で異なる参照を�
 background-image: url($base-dir + "assets/images/icon-blank.svg");
 ```
 
-## 🍰 Assets
+## Assets
 
 ローカル環境ではVITEの開発サーバー、本番環境ではテーマのルートを参照する必要があるため<br>
 `vite-config.php`の関数を使用してAssetsにアクセスしてください。
@@ -99,13 +99,13 @@ background-image: url($base-dir + "assets/images/icon-blank.svg");
 <img src="<?= vite_src_static('icon-blank.svg') ?>" decoding="async" width="30" height="30" alt="">
 ```
 
-## 😎 Svg Sprite
+## Svg Sprite
 
 ```bash
 <?= get_svg_sprite('icon-blank') ?>
 ```
 
-## ✋ Lint
+## Lint
 
 ```bash
 pnpm run lint:check
@@ -122,7 +122,7 @@ Lint はプリコミット時に必ず実行されます。以下の vscode プ�
 - [stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint)
 - [eslint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 
-## 👀 Document
+## Document
 
 - [wp-env](https://ja.wordpress.org/team/handbook/block-editor/reference-guides/packages/packages-env/)
 - [vite](https://ja.vitejs.dev/)
