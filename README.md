@@ -3,7 +3,7 @@
 ## 開発環境
 
 本テンプレートはWordPressのアップデートが常に行われていくことを前提に、常にWordPressの最新バージョンを取得します。<br />
-バージョンを固定する場合は、プロジェクト開始時に[Release Archive](https://ja.wordpress.org/download/releases/) よりリンク先をコピーして`.wp-env.json` にバージョンを指定してください。
+バージョンを固定する場合は、プロジェクト開始時に [Release Archive](https://ja.wordpress.org/download/releases/) よりリンク先をコピーして`.wp-env.json` にバージョンを指定してください。
 
 ```js
 // WordPressバージョンを固定する場合(/wp-env.json)
@@ -73,16 +73,44 @@ pnpm build
 
 アップロードの際は`/dist`以下のファイルをアップロードしてください。
 
-## Styling
+## CSS
 
 クラスの命名については BEM を採用しています。
 
-## How to reference images from css
+```
+│
+├── base: 全体に共通する汎用的なcss
+│   ├── _global.scss
+│   ├── _mixins.scss：複数の場所で繰り返し使うcssをmixinとして定義しているファイル
+│   └── _reset.scss
+│
+├── common：全ページ共通のcss
+│   ├── _footer.scss
+│   ├── _header.scss
+│   └── _subpage：下層ページ共通のcss（=下層2ページ以上にまたがるcss）
+│
+├── components：コンポーネントのcss
+│   ├── _button.scss
+│   └── _container.scss
+│
+├── page：各ページごとのcss
+│   ├── _feature.scss
+│   └── _front-page.scss
+│
+└──  main.scss：エントリポイント
 
-`$base-dir` は設定をするとCSSでローカルと本番で異なる参照をすることができます。<br />
-主にCSSファイルでurlを指定するときに使用します。
+・変数や関数は自由に作成しても大丈夫です。
 
-```bash
+・pagesフォルダ内のscssは、原則当該ページでのみ読み込みます。main.scssでその設定を行います。
+https://gyazo.com/2b6294dfd9537b5ea47a5b497783ab59
+```
+
+## CSSファイルで url を参照するとき
+
+CSSファイルでurlを指定するときは、`$base-dir` を使用します。<br />
+`$base-dir` はCSSでローカルと本番で異なる参照をすることができます。<br />
+
+```css
 background-image: url($base-dir + "assets/images/icon.svg");
 ```
 
