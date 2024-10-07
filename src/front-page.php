@@ -13,7 +13,7 @@
         href="<?php echo home_url("feature"); ?>">
         Feature
       </a>
-      <a class="hero__button button button--secondary button--lg" href="https://github.com/servmask">
+      <a class="hero__button button button--secondary button--lg" href="https://github.com/H-ymt/wp-docker-starter-theme" target="_blank">
         GitHub
         <span>
           <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 2048 2048">
