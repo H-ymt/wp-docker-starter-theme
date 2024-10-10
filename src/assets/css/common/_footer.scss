@@ -1,8 +1,10 @@
 .footer {
+  margin-top: 3rem;
   color: var(--c-text-muted);
+  border-top: 1px solid var(--c-border);
 }
 
 .footer__inner {
-  padding-block: 3rem;
+  padding-block: 4rem;
   text-align: center;
 }

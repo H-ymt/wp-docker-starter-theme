@@ -1,3 +1,26 @@
 .feature {
   display: block;
 }
+
+.feature__list {
+  display: grid;
+  row-gap: 0.5em;
+  padding: 1rem 2rem;
+  list-style-type: disc;
+}
+
+.feature__post {
+  display: grid;
+  row-gap: 1rem;
+}
+
+.feature__post .wp-block-post {
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid var(--c-border);
+}
+
+@include mq(lg) {
+  .feature__list li {
+    font-size: 1rem;
+  }
+}
